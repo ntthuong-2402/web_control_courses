@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Edit course
+        <%= course.name %>
+    </title>
+</head>
+
+<body>
+    <div class="container text-left" style="width: 70%; margin-bottom: 3rem;">
+        <br>
+        <h4>
+            Chỉnh sửa chi tiết khóa học
+            <%= course.name %>
+        </h4>
+        <br>
+        <form method="POST" action="">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Tên khóa học</label>
+                <input type="text" class="form-control" value="<%= course.name %>" name="name">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Hình ảnh</label>
+                <input type="text" class="form-control" value="<%= course.image %>" name="image">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">VideoID</label>
+                <input type="text" class="form-control" value="<%= course.videoID %>" name="videoID">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Số lượng đăng kí</label>
+                <input type="text" class="form-control" value="<%= course.subscribe %>" name="subscribe">
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput3">Số lượng bài học</label>
+                <input type="text" class="form-control" value="<%= course.lessionNum %>" name="lessionNum">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput4">Nội dung</label>
+                <input type="text" class="form-control" value="<%= course.description %>" name="description">
+            </div>
+
+            <input type="submit" class="btn btn-danger" value="Submit">
+        </form>
+    </div>
+</body>
+<style>
+
+</style>
+
+</html>

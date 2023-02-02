@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Cắt Moi Academy</title>
+    <link type="image/png" sizes="16x16" rel="shortcut icon" href="https://img.icons8.com/ios-glyphs/30/000000/education.png">
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/grid.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Open+Sans:ital,wght@0,400;1,300&family=Playfair+Display:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Shizuru&display=swap"
+        rel="stylesheet">
+
+    <!-- LINK CAROUSEL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <!-- BOX ICON  -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/" class="logo" style="text-decoration: none;">
+                <i style="margin-right: 10px;" class='bx bx-cut bx-tada main-color'></i>A<span class="main-color">cade</span>my
+            </a>
+
+            <form action="" class="search-box">
+                <input type="text" name="search" placeholder="Search Your Course ....." class="nav-search">
+                <button type="password">
+                              <i class='bx bx-search-alt'></i>
+                         </button>
+            </form>
+
+            <div class="nav-sign">
+                <a href="/login" class="btn btn-hover">
+                    <span>Sign in</span>
+                </a>
+                <a href="/register" class="btn btn-hover">
+                    <span>Sign up</span>
+                </a>
+            </div>
+
+            <div class="menu-toggle">
+                <ion-icon name="menu-outline" class="open"></ion-icon>
+                <ion-icon name="close-outline" class="close"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <div class="jum">
+            <h3 class="text">Đăng Ký</h3>
+            <br>
+            <p class="text">Đăng ký để mua hàng và sử dụng những tiện ích mới nhất</p>
+            <br>
+            <center><button type="submit" class="btnn btn-primary button">Đăng nhập bằng Facebook</button></center>
+            <br><br>
+            <center>
+                <p class="text">Bạn đã có tài khoản??? <a href="/login" style="font-size: small;text-decoration: none; color:darkcyan;">Đăng nhập</a></p>
+            </center>
+            <br><br>
+        </div>
+        <div class="jum" style="margin: 10px; border-left: 1px solid blueviolet; padding-left: 25px;">
+            <form action="/auth/register" method="POST">
+                <input type="text" class="form-control" placeholder="Họ tên" name="name" required>
+                <br>
+                <input type="date" class="form-control" placeholder="Ngày sinh" name="ngaysinh" required>
+                <br>
+                <input type="email" class="form-control" placeholder="Email" name="email" required>
+                <br>
+                <input type="password" class="form-control" placeholder="Mật khẩu" name="matkhau" required>
+                <br>
+                <input type="password" class="form-control" placeholder="Xác nhận Mật khẩu" name="matkhauXN" required>
+                <br>
+                <input type="text" class="form-control" placeholder="Role" name="role" value="admin" hidden required>
+                <br>
+                <center><button type="submit" class="btnn btn-dark button">Tạo tài khoản</button></center>
+            </form>
+        </div>
+
+
+
+        <script src="/js/main.js"></script>
+
+</body>
+<style>
+    body {
+        background-color: rgb(226, 210, 210);
+    }
+    
+    .text {
+        color: #363636;
+    }
+    
+    .btnn {
+        width: 200pxpx;
+        height: 40px;
+    }
+    
+    #header_content {
+        width: 80%;
+        padding: 5px;
+        margin: 0px auto;
+    }
+    
+    .inline_block {
+        display: inline-block;
+        text-decoration: none;
+    }
+    
+    #navbar {
+        /* float: right; */
+        padding: 10px;
+        font-size: 110%;
+        margin-top: -50px;
+        width: 100%;
+        margin-bottom: -40px;
+    }
+    
+    #navbar nav a {
+        text-decoration: none;
+        padding: 10px;
+    }
+    
+    #menu {
+        display: inline-block;
+        margin: 0px auto;
+        /* margin-bottom: -20px; */
+    }
+    
+    #menu :hover {
+        color: chocolate;
+    }
+    
+    #menu nav a {
+        text-decoration: none;
+        padding: 70px;
+        font-size: 103%;
+        color: black;
+        font-weight: bold;
+    }
+    
+    #slider {
+        width: 100%;
+        margin-top: -122px;
+        margin-bottom: 20px;
+    }
+    
+    .input {
+        width: 65%;
+    }
+    
+    .image {
+        width: 100%;
+        height: 80%;
+        margin-top: 107px;
+    }
+    
+    .checked {
+        color: orange;
+    }
+    
+    #content_cover {
+        width: 100%;
+    }
+    
+    #content {
+        width: 80%;
+    }
+    
+    .box {
+        margin-bottom: -20px;
+        display: inline-block;
+    }
+    
+    nav li a {
+        color: black;
+    }
+    
+    .style {
+        margin-top: -10px;
+    }
+    
+    #footer {
+        width: 100%;
+        background-color: #363636;
+        margin-top: 30px;
+    }
+    
+    #footer_content {
+        width: 80%;
+        color: blanchedalmond;
+        margin: 0px auto;
+        padding: 13px;
+    }
+    
+    div nav {
+        width: 100%;
+    }
+    
+    #collapsibleNavbar {
+        margin: 55px;
+    }
+    
+    #nav1 {
+        width: 100%;
+        background-color: #363636;
+        margin-top: 9px;
+        margin-bottom: -15px;
+        margin: 0px auto;
+        height: 40px;
+    }
+    
+    #nav1_content {
+        width: 80%;
+        display: inline-block;
+        color: white;
+        font-size: small;
+        padding-left: 160px;
+        margin-top: 10px;
+    }
+    
+    .jumbotron {
+        width: 50%;
+        margin: 0px auto;
+        background-color: rgb(214, 186, 186);
+        border: 1px solid blueviolet;
+        padding-top: 20px;
+        margin-bottom: 45px;
+        margin-top: 50px;
+        padding-bottom: 25px;
+    }
+    
+    .jum {
+        width: 45%;
+        display: inline-block;
+        /* border: 1px solid black;
+        margin: 10px; */
+    }
+    
+    .button {
+        border-radius: 8px;
+    }
+    
+    .footer_icon {
+        font-size: 1.5rem;
+        border: 1px solid white;
+        padding: 1rem;
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        /* color: blue; */
+        align-items: center;
+        display: inline-flex;
+    }
+</style>
+
+</html>

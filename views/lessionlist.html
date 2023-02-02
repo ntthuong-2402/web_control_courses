@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lession List | Cắt Moi Academy</title>
+    <link type="image/png" sizes="16x16" rel="shortcut icon" href="https://img.icons8.com/ios-glyphs/30/000000/education.png">
+
+    <!-- Link css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/css/coursedetail.css">
+
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Open+Sans:ital,wght@0,400;1,300&family=Playfair+Display:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Shizuru&display=swap"
+        rel="stylesheet">
+
+    <!-- LINK CAROUSEL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <!-- BOX ICON  -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+        /* .big-section {
+            position: relative;
+            top: -380px;
+        } */
+        
+        .bg-color {
+            height: 80px;
+            background-color: var(--second-color);
+        }
+        
+        .nav-item a {
+            width: 500px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        
+        .big-slide-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container ">
+        <div class="nav bg-color">
+            <a href="/" class="logo">
+                <i style="margin-right: 10px;" class='bx bx-cut bx-tada main-color'></i>A<span class="main-color">cade</span>my
+            </a>
+
+            <form action="" class="search-box">
+                <input type="text" name="search" placeholder="Search Your Course ....." class="nav-search">
+                <button type="password">
+                              <i class='bx bx-search-alt'></i>
+                         </button>
+            </form>
+
+            <% if (dataCustomer.id) { %>
+
+                <div class="nav-sign">
+                    <span style="margin-top: 0;">
+                        <ion-icon style="margin-top: 0;font-size: 30px; color: #c0392c;" name="person-circle-outline"> </ion-icon>
+                    </span>
+                    <span style="text-transform: uppercase;">
+                        <%= dataCustomer.name %>
+                    </span>
+                    <a href="/logOut" class="btn">
+                        <span>Log out</span>
+                    </a>
+                </div>
+                <% } else {%>
+
+                    <div class="nav-sign">
+                        <a href="/login" class="btn btn-hover">
+                            <span>Sign in</span>
+                        </a>
+                        <a href="/register" class="btn btn-hover">
+                            <span>Sign up</span>
+                        </a>
+                    </div>
+
+                    <% } %>
+
+                        <div class="menu-toggle">
+                            <ion-icon name="menu-outline" class="open"></ion-icon>
+                            <ion-icon name="close-outline" class="close"></ion-icon>
+                        </div>
+        </div>
+
+        <div class="menu-toggle">
+            <ion-icon name="menu-outline" class="open"></ion-icon>
+            <ion-icon name="close-outline" class="close"></ion-icon>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="nav-wrapper">
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item active">
+                <a href="#">
+                    <span class="nav-icon"><ion-icon name="home-outline"></ion-icon></span>Home
+                </a>
+            </li>
+            <% lession.forEach((lession, index) => { %>
+
+                <li class="nav-item">
+                    <a href="#<%= lession.idclass %>">
+                        <span class="nav-icon"><ion-icon name="play-circle"></ion-icon>  </span>
+                        <%= lession.name %>
+
+                    </a>
+                </li>
+                <% }) %>
+
+        </ul>
+    </div>
+
+
+    <div class="big-section" id="big-section">
+        <!-- BIG SLIDES -->
+        <div class="slide-container" id="big-slider">
+
+            <div class="big-slide-item active">
+                <img src="https://i.ytimg.com/vi/<%= course.imageID%>/hqdefault.jpg" alt="Poster">
+
+                <div class="big-slide-item-content">
+                    <div class="item-content-wrapper">
+                        <div class="item-content-title">
+                            <%= course.name %>
+                        </div>
+
+                        <div class="course-infors">
+                            <div class="course-infor">
+                                <ion-icon name="people"></ion-icon>
+                                <span> <%= course.subscribe %></span>
+                            </div>
+                            <div class="course-infor">
+                                <ion-icon name="time-outline"></ion-icon>
+                                <span> <%= course.lessionNum %></span>
+                            </div>
+
+                        </div>
+
+                        <div class="item-content-description ">
+                            <%= course.description %>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="big-section">
+        <% lession.forEach((lession, index) => { %>
+            <section class="international-video">
+                <div class="international-vid" id="<%= lession.idclass %>">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=lession.videoID %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+            </section>
+            <% }) %>
+
+    </div>
+
+    <footer class="footer ">
+        <div class="section-wrapper">
+            <div class="row ">
+                <div class="col-6 footer-header">
+                    <a href="#" class="logo">
+                        <i style="margin-right: 10px;" class='bx bx-cut bx-tada main-color'></i>A<span class="main-color">cade</span>my
+
+                    </a>
+
+                    <p class="description">
+                        Academy.vn là cổng đào tạo trực tuyến chuyên về kỹ năng cho người đi làm. Các khoá học tại đây được xây dựng hoàn toàn bằng Video và học viên sẽ tham gia học 100% qua mạng máy tính. Với thực trạng hơn 75% số sinh viên và nhân viên mới đi làm hiện nay
+                        còn thiếu và yếu về kỹ năng mềm cũng như khả năng giao tiếp ứng xử trong công việc cũng như cuộc sống. Academy.vn được thành lập nhằm giúp các bạn có điều kiện được học và rèn luyện các kỹ năng thiết yếu cho công việc cũng như
+                        cuộc sống cùng với những giáo viên nổi tiếng và có chuyên môn cao. </p>
+                    <div class="social-list">
+                        <a href="#" class="social-item">
+                            <i class="bx bxl-facebook"></i>
+                        </a>
+                        <a href="#" class="social-item">
+                            <i class="bx bxl-instagram"></i>
+                        </a>
+                        <a href="#" class="social-item">
+                            <i class="bx bxl-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 footer-item">
+                    <div class="row">
+                        <div class="col-4 align-items-center">
+                            <div class="content">
+                                <p class="main-color" style="font-size: 1.2rem;"><b>Academy</b></p>
+                                <ul class="footer-menu">
+                                    <li><a href="#"> About us</a></li>
+                                    <li><a href="#"> My profile</a></li>
+                                    <li><a href="#"> Pricing plans</a></li>
+                                    <li><a href="#"> Contacts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="col-4 align-items-center">
+                            <div class="content">
+                                <p class="main-color" style="font-size: 1.2rem;"><b>Browse</b></p>
+                                <ul class="footer-menu">
+                                    <li><a href="#">Course</a></li>
+                                    <li><a href="#">My Course</a></li>
+                                    <li><a href="#">Messages</a></li>
+                                    <li><a href="#">Library</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-4 align-items-center">
+                            <div class="content">
+                                <p class="main-color" style="font-size: 1.2rem;"><b>Help</b></p>
+                                <ul class="footer-menu">
+                                    <li><a href="#">Account & Billing</a></li>
+                                    <li><a href="#">Plans & Pricing</a></li>
+                                    <li><a href="#">Supported devices</a></li>
+                                    <li><a href="#">Accessibility</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Cắt Moi Academy</title>
+    <link type="image/png" sizes="16x16" rel="shortcut icon" href="https://img.icons8.com/ios-glyphs/30/000000/education.png">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/grid.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Open+Sans:ital,wght@0,400;1,300&family=Playfair+Display:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Shizuru&display=swap"
+        rel="stylesheet">
+
+    <!-- LINK CAROUSEL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <!-- BOX ICON  -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+        body {
+            background-color: rgb(247, 239, 239);
+        }
+        
+        .nav-link {
+            color: #000 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/" class="logo" style="text-decoration: none;color: #000;">
+                <i style="margin-right: 10px;" class='bx bx-cut bx-tada main-color'></i>A<span class="main-color">cade</span>my
+            </a>
+
+            <form action="" class="search-box">
+                <input type="text" name="search" placeholder="Search Your Course ....." class="nav-search">
+                <button type="password">
+                              <i class='bx bx-search-alt'></i>
+                         </button>
+            </form>
+
+            <div class="nav-sign">
+                <span style="margin-top: 0;">
+                    <ion-icon style="margin-top: 0;font-size: 30px; color: #c0392c;" name="person-circle-outline"> </ion-icon>
+                </span>
+                <span style="text-transform: uppercase;color: #000;">
+                    <%= name %>
+                </span>
+            </div>
+
+            <div class="menu-toggle">
+                <ion-icon name="menu-outline" class="open"></ion-icon>
+                <ion-icon name="close-outline" class="close"></ion-icon>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex;">
+        <div class="menuAdmin">
+            <nav class="navbar bg-dark" style="height: 100%;margin-right: 20px;">
+                <ul class="navbar-nav" style="margin-top: -35rem;">
+                    <li class="nav-item navItem">
+                        <a class="nav-link " href="/courseAdmin">Course</a>
+                    </li>
+                    <li class="nav-item navItem">
+                        <a class="nav-link " href="/lessionAdmin">Lession</a>
+                    </li>
+                    <li class="nav-item navItem">
+                        <a class="nav-link" href="/courseSub">List Course Subscribe</a>
+                    </li>
+                    <li class="nav-item navItem">
+                        <a class="nav-link" href="/admin_customer">User Account</a>
+                    </li>
+
+
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="contentAdmin">
+
+            <div class="thongke">
+                <div class="access">
+                    <span class="text">Thống kê truy cập</span>
+                    <span class="solieu"><%= thongke.access%></span>
+                </div>
+                <div class="access">
+                    <span class="text">Thống kê Online</span>
+                    <span class="solieu"><%= thongke.login%></span>
+                </div>
+                <div class="access">
+                    <span class="text">Tổng khóa học</span>
+                    <span class="solieu"><%= thongke.courseNum%></span>
+                </div>
+                <div class="access">
+                    <span class="text">Tổng số bài học</span>
+                    <span class="solieu"><%= thongke.lessionNum%></span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="/js/main.js"></script>
+
+</body>
+
+<style>
+    .navbar-nav {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    ul li a {
+        color: rgb(23, 20, 20);
+    }
+    
+    a:hover {
+        color: chocolate !important;
+    }
+    
+    .menuAdmin {
+        width: 20%;
+        margin-top: 600px;
+        margin-left: 50px;
+        color: #000;
+    }
+    
+    .contentAdmin {
+        width: 80%;
+    }
+    
+    .thongke {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        height: 100px;
+        margin-top: 60px;
+        background-color: rgb(242, 219, 219);
+        border-radius: 8px;
+        color: #000;
+    }
+    
+    .access {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    
+    .text {
+        justify-content: flex-start;
+    }
+    
+    .solieu {
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    
+    #trangchu {
+        margin-bottom: 3rem;
+        border: 1px solid;
+        padding-right: 70px;
+        padding-left: 70px;
+        border-radius: 10px;
+    }
+    
+    .navItem {
+        text-align: center;
+        border: 1px solid;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    /* span {
+        margin-top: 8px;
+    } */
+    
+    .img-fluid {
+        height: 20%;
+    }
+    
+    .nav-sign {
+        cursor: pointer;
+    }
+    
+    .nav-sign ion-icon {
+        padding: 0px;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: auto;
+        right: 230px;
+    }
+</style>
+
+</html>
